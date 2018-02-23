@@ -4,11 +4,25 @@
     <title><![CDATA[如何编写一个好看的md文件]]></title>
     <url>%2F2018%2F02%2F23%2Fmarkdown%2F</url>
     <content type="text"><![CDATA[入门今天看的一篇入门md教程 : 链接 ……]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>md</tag>
+        <tag>Markdown</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[vue.js 学习之旅]]></title>
     <url>%2F2018%2F02%2F23%2Fvue_study%2F</url>
     <content type="text"><![CDATA[vue.js 初识vue.js 及其 文档 最早接触 vue.js 是在16年，然而因兼容性问题，项目中并不能使用vue.js (灬ꈍ ꈍ灬)。 百科:Vue.js(读音 /vjuː/, 类似于 view)是一个构建数据驱动的 web 界面的渐进式框架。Vue.js 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。 学习一个新的HTML框架，先看代码，循序渐进。简单代码 &lt;div id=&quot;app&quot;&gt; &lt;/div&gt; var app = new Vue({ el: &#39;#app&#39;, data: { message: &#39;Hello Vue!&#39; } }) 显然，html 代码和 JavaScript 代码 就这样结合在了一起。 很方便的解决了jQuery $. $. 的问题 ，前人栽树，后人乘凉！ 待续……]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>vue.js</tag>
+        <tag>HTML框架</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[第一篇文章]]></title>
