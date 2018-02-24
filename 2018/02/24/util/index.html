@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="Isaac">
 <meta property="og:description" content="json 类库 gosn: 谷歌的开发的json操作工具 优点  ○提供一种像toString()和构造方法的很简单的机制(toJson()，fromJson())，来实现Java 对象和Json之间的互相转换。○允许已经存在的无法改变的对象，转换成Json，或者Json转换成已存在的对象。○允许自定义对象的表现形式○支持任意的复杂对象○能够生成可压缩和可读的Json的字符串输出。○依赖包少，只有">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-24T05:21:44.396Z">
+<meta property="og:updated_time" content="2018-02-24T05:26:44.315Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java开发常用类库">
 <meta name="twitter:description" content="json 类库 gosn: 谷歌的开发的json操作工具 优点  ○提供一种像toString()和构造方法的很简单的机制(toJson()，fromJson())，来实现Java 对象和Json之间的互相转换。○允许已经存在的无法改变的对象，转换成Json，或者Json转换成已存在的对象。○允许自定义对象的表现形式○支持任意的复杂对象○能够生成可压缩和可读的Json的字符串输出。○依赖包少，只有">
@@ -358,7 +358,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-24T13:21:44+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-24T13:26:44+08:00">
                 2018-02-24
               </time>
             
@@ -448,16 +448,15 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//把 json字符串 变成一个 element </span><br><span class="line">JsonElement element = new JsonParser().parse(json);</span><br><span class="line">//获取 节点 </span><br><span class="line">elvalues = (JsonObject) element.getAsJsonObject().get(&quot;elkey&quot;);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>给一个 json 赋值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//创建一个json</span><br><span class="line">JsonObject result = new JsonObject();</span><br><span class="line">//添加 节点 （property，element）</span><br><span class="line">result.add(&quot;body&quot;, element);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//创建一个json</span><br><span class="line">JsonObject result = new JsonObject();</span><br><span class="line">//添加 节点 （property，element）</span><br><span class="line">result.add(&quot;body&quot;, element);//element 可以是 JsonObject , JsonArray , JsonNull , JsonPrimitive  中的一个</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>补充  JsonElement </p>
 <blockquote>
 <p>该类是一个抽象类，代表着json串的某一个元素。这个元素可以是一个Json(JsonObject)、可以是一个数组(JsonArray)、可以是一个Java的基本类型(JsonPrimitive)、当然也可以为null(JsonNull);JsonObject,JsonArray,JsonPrimitive，JsonNull都是JsonElement这个抽象类的子类。<br>JsonElement提供了一系列的方法来判断当前的JsonElement是否是上述子类的一种：比如isJsonObject()用来判断当前的json元素是否是一个数组类型，它的实现很简单且这里巧妙地应用了Java的多态机制：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public boolean isJsonObject() &#123;  </span><br><span class="line">    return this instanceof JsonObject;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ol>
-<blockquote>
+<pre><code class="$xslt">public boolean isJsonObject() {  
+ return this instanceof JsonObject;  
+} 
+</code></pre>
 <p>同样的既然有isJsonObject()等这样的判断，该类也提供了把当前JsonElement作为上述子类的一种返回的方法：</p>
 <pre><code class="$xslt">public JsonObject getAsJsonObject() {  
     if (isJsonObject()) {  
@@ -466,8 +465,10 @@
     throw new IllegalStateException(&quot;Not a JSON Object: &quot; + this);  
 }  
 </code></pre>
-<p>JsonObject , JsonArray , JsonNull , JsonPrimitive  </p>
 </blockquote>
+</li>
+<li>待续……</li>
+</ol>
 
       
     </div>
@@ -718,7 +719,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共782字</span>
+  <span class="post-count">博客全站共790字</span>
 </div>
 
         
