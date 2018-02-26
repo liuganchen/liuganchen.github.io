@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[日常开发常见错误记录]]></title>
+    <url>%2F2018%2F02%2F26%2FerrorProcessingRecord%20%2F</url>
+    <content type="text"><![CDATA[gson 错误 记录 com.google.gson.stream.MalformedJsonException解决办法：检查json字符串的格式，特别是空格，逗号。 根绝key 获取value 结果多一个’’’’解决办法，使用(String)强转或者使用getAsString进行格式转化。]]></content>
+      <categories>
+        <category>Exception</category>
+      </categories>
+      <tags>
+        <tag>Exception</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[java开发常用类库]]></title>
     <url>%2F2018%2F02%2F24%2Futil%2F</url>
     <content type="text"><![CDATA[json 类库 gosn: 谷歌的开发的json操作工具 优点 ○提供一种像toString()和构造方法的很简单的机制(toJson()，fromJson())，来实现Java 对象和Json之间的互相转换。○允许已经存在的无法改变的对象，转换成Json，或者Json转换成已存在的对象。○允许自定义对象的表现形式○支持任意的复杂对象○能够生成可压缩和可读的Json的字符串输出。○依赖包少，只有一个jar核心包，无其他依赖。○Gson安全稳定，无漏洞。（Fastjson出现过漏洞） 出处 引入 123456789&lt;dependency&gt; &lt;groupId&gt;com.google.code.gson&lt;/groupId&gt; &lt;artifactId&gt;gson&lt;/artifactId&gt; &lt;version&gt;2.3.1&lt;/version&gt; &lt;/dependency&gt; 使用 json字符串 → Javabean 1User user = new Gson().fromJson(string, User.class); json字符串 → map(hash) 12345 Map&lt;String, String&gt; map = gson.fromJson(json, HashMap.class); ``` 4. json字符串 → list&lt;T&gt;```$xslt List&lt;Person&gt; persons =gson.fromJson(json, new TypeToken&lt;List&lt;Person&gt;&gt;() &#123;&#125;.getType()); object → json 字符串 123String string = new Gson().toJson(list);String string = new Gson().toJson(map);String string = new Gson().toJson(user); 从json字符串取值 1234//把 json字符串 变成一个 element JsonElement element = new JsonParser().parse(json);//获取 节点 elvalues = (JsonObject) element.getAsJsonObject().get(&quot;elkey&quot;); 给一个 json 赋值 1234//创建一个jsonJsonObject result = new JsonObject();//添加 节点 （property，element）result.add(&quot;body&quot;, element);//element 可以是 JsonObject , JsonArray , JsonNull , JsonPrimitive 中的一个 补充 JsonElement 该类是一个抽象类，代表着json串的某一个元素。这个元素可以是一个Json(JsonObject)、可以是一个数组(JsonArray)、可以是一个Java的基本类型(JsonPrimitive)、当然也可以为null(JsonNull);JsonObject,JsonArray,JsonPrimitive，JsonNull都是JsonElement这个抽象类的子类。JsonElement提供了一系列的方法来判断当前的JsonElement是否是上述子类的一种：比如isJsonObject()用来判断当前的json元素是否是一个数组类型，它的实现很简单且这里巧妙地应用了Java的多态机制： public boolean isJsonObject() { return this instanceof JsonObject; } 同样的既然有isJsonObject()等这样的判断，该类也提供了把当前JsonElement作为上述子类的一种返回的方法： public JsonObject getAsJsonObject() { if (isJsonObject()) { return (JsonObject) this; } throw new IllegalStateException(&quot;Not a JSON Object: &quot; + this); } 待续……]]></content>
@@ -10,17 +21,6 @@
       <tags>
         <tag>工具</tag>
         <tag>类库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[日常开发常见错误记录]]></title>
-    <url>%2F2018%2F02%2F24%2FerrorProcessingRecord%20%2F</url>
-    <content type="text"><![CDATA[gson 错误 记录 com.google.gson.stream.MalformedJsonException解决办法：检查json字符串的格式，特别是空格，逗号。]]></content>
-      <categories>
-        <category>Exception</category>
-      </categories>
-      <tags>
-        <tag>Exception</tag>
       </tags>
   </entry>
   <entry>
