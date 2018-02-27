@@ -2,8 +2,8 @@
 <search>
   <entry>
     <title><![CDATA[日常开发常见错误记录]]></title>
-    <url>%2F2018%2F02%2F26%2FerrorProcessingRecord%20%2F</url>
-    <content type="text"><![CDATA[gson 错误 记录 com.google.gson.stream.MalformedJsonException解决办法：检查json字符串的格式，特别是空格，逗号。 根绝key 获取value 结果多一个’’’’解决办法，使用(String)强转或者使用getAsString进行格式转化。]]></content>
+    <url>%2F2018%2F02%2F27%2FerrorProcessingRecord%20%2F</url>
+    <content type="text"><![CDATA[gson 错误 记录 com.google.gson.stream.MalformedJsonException解决办法：检查json字符串的格式，特别是空格，逗号。 根据key 获取value 结果多一个’’’’解决办法，使用(String)强转或者使用getAsString进行格式转化。]]></content>
       <categories>
         <category>Exception</category>
       </categories>
