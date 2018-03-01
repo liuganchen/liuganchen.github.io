@@ -359,7 +359,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-01T17:36:36+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-01T17:40:13+08:00">
                 2018-03-01
               </time>
             
@@ -429,15 +429,15 @@
 <li>根据key 获取value 结果多一个’’’’<pre><code class="$xslt">解决办法，使用(String)强转或者使用getAsString进行格式转化。
 </code></pre>
 </li>
-<li>今天遇到一个gson的深坑，序列化null值  </li>
-</ol>
-<pre><code class="$xslt">序列化的时候，null自动被忽略，然后网上找到解决方法：
+<li>今天遇到一个gson的深坑，序列化null值<pre><code class="$xslt">序列化的时候，null自动被忽略，然后网上找到解决方法：
 private Gson gson2 = new GsonBuilder().serializeNulls().create();
 然后有意思的事情出现了，null -&gt; &quot;null&quot; .
 于是我各种找，各种判断，写自己的TypeFactory，搞了好久（半个下午）。最后突然发现 ，在最后的result.toString后面加个
 replaceAll不就行了吗。
 现在的心情感觉什么都不好了！
 </code></pre>
+</li>
+</ol>
 
           
         
